@@ -5,7 +5,7 @@ import Cards from "../components/Cards";
 export default function FirstRoute() {
   return (
     <View style={[styles.scene, { backgroundColor: "black" }]}>
-      <Cards style={{ zIndex: 0 }} />
+      <Cards />
     </View>
   );
 }
