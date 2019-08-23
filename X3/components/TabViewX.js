@@ -1,18 +1,9 @@
 import * as React from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
-
-const FirstRoute = () => (
-  <View style={[styles.scene, { backgroundColor: "#ff4081" }]} />
-);
-
-const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: "#673ab7" }]} />
-);
-
-const ThirdRoute = () => (
-  <View style={[styles.scene, { backgroundColor: "black" }]} />
-);
+import FirstRoute from "../screens/FirstRoute";
+import SecondRoute from "../screens/SecondRoute";
+import ThirdRoute from "../screens/ThirdRoute";
 
 export default class TabViewX extends React.Component {
   state = {
@@ -39,9 +30,3 @@ export default class TabViewX extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  scene: {
-    flex: 1
-  }
-});
