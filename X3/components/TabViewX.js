@@ -27,6 +27,7 @@ export default class TabViewX extends React.Component {
         onIndexChange={index => this.setState({ index })}
         initialLayout={{ width: Dimensions.get("window").width }}
         tabBarPosition={"bottom"}
+        scrollEnabled={true}
       />
     );
   }
