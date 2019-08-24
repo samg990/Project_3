@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, StatusBar } from "react-native";
-import WelcomeScreen from "./screens/WelcomeScreen";
-import ButtonSign from "./components/SignUpBtn";
-import TabViewX from "./components/TabViewX";
+import PropsTypes from "prop-types";
 
 export default class App extends Component {
   render() {
-    return <TabViewX />;
+    return (
+      <view style={styles.container}>
+        <statusBar barStyle="light-content" backgroundColor="#4f6d7a" />
+      </view>
+    );
   }
 }
 
