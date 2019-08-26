@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Flatlist, ActivityIndicator } from "react-native";
 import {
 	Container,
 	Header,
@@ -15,21 +15,23 @@ import {
 	Right,
 } from "native-base";
 import RentModal from "../components/RentModal";
-export default function Cards() {
+import BoatsRoute from "../screens/BoatsRoute";
+
+export default function Cards(props) {
 	return (
 		<Card style={[styles.container]}>
 			<CardItem>
 				<Left>
-					<Thumbnail source={require("../assets/images/CaptainAvatar.jpg")} />
+					<Thumbnail source={{ uri: props.thumbnail }} />
 					<Body>
-						<Text>The X3BOAT</Text>
-						<Text note>Santa Monica</Text>
+						<Text>{props.name}</Text>
+						<Text note>{props.location}</Text>
 					</Body>
 				</Left>
 			</CardItem>
 			<CardItem cardBody>
 				<Image
-					source={require("../assets/images/Boat1Example.jpg")}
+					source={{ uri: props.image }}
 					style={{ height: 200, width: null, flex: 1 }}
 				/>
 			</CardItem>
@@ -37,13 +39,13 @@ export default function Cards() {
 				<Left>
 					<Button transparent>
 						<Icon active name="thumbs-up" />
-						<Text>12 Rents</Text>
+						<Text>{props.rents} Rents</Text>
 					</Button>
 				</Left>
 				<Body>
 					<Button transparent>
-						<Icon active name="chatbubbles" />
-						<Text>4 Comments</Text>
+						<Icon active name="pulse" />
+						<Text> Price: ${props.price}</Text>
 					</Button>
 				</Body>
 				<Right>
